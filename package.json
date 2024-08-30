@@ -19,6 +19,8 @@
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/test-utils": "^2.4.6",
     "chromedriver": "^126.0.2",
+    "electron": "^32.0.1",
+    "electron-builder": "^24.13.3",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "geckodriver": "^4.4.1",
