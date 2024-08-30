@@ -1,16 +1,21 @@
 {
   "name": "todolist",
+  "author": "Your Name",
+  "description": "A ToDo List Desktop Application built with Vue.js and Electron",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "electron": "electron electron.js",
+    "electron-build": "electron-builder",
     "preview": "vite preview",
     "test:e2e": "nightwatch tests/e2e/*",
     "test:unit": "nightwatch src/**/__tests__/*",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
+
   "dependencies": {
     "vue": "^3.4.29"
   },
