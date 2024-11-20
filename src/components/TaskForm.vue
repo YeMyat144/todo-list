@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-      <h1 class="subtitle" style="color: greenyellow;">Add a Task</h1>
+      <h2 class="subtitle" style="color: greenyellow;">Add a Task</h2>
       <form @submit.prevent="submitForm">
         <div class="field">
           <label class="label">Title</label>
@@ -25,6 +25,17 @@
               placeholder="Category"
               required
             />
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">Priority</label>
+          <div class="select">
+            <select v-model="newTask.priority" required>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
           </div>
         </div>
   
@@ -54,6 +65,7 @@
         newTask: {
           title: '',
           category: '',
+          priority: 'Low',
           date: '',
         },
       };
@@ -61,10 +73,9 @@
     methods: {
       submitForm() {
         this.$emit('add-task', { ...this.newTask });
-        this.newTask = { title: '', category: '', date: '' };
+        this.newTask = { title: '', category: '', priority: 'Low', date: '' };
       },
     },
   };
-</script>
-
+  </script>
   

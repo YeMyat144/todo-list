@@ -7,38 +7,38 @@
           <tr>
             <th>Title</th>
             <th>Category</th>
+            <th>Priority</th>
             <th>Due Date</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(task, index) in tasks" :key="index">
-            <td>
-              <input
-                class="input is-small"
-                v-model="task.title"
-                @change="emitUpdate"
-              />
+            <td :class="{ 'has-text-grey-light': task.completed }">
+              {{ task.title }}
             </td>
-            <td>
-              <input
-                class="input is-small"
-                v-model="task.category"
-                @change="emitUpdate"
-              />
+            <td :class="{ 'has-text-grey-light': task.completed }">
+              {{ task.category }}
             </td>
-            <td>
-              <input
-                class="input is-small"
-                type="date"
-                v-model="task.date"
-                @change="emitUpdate"
-              />
+            <td :class="{ 'has-text-grey-light': task.completed }">
+              <span
+                class="tag"
+                :class="{
+                  'is-success': task.priority === 'Low',
+                  'is-warning': task.priority === 'Medium',
+                  'is-danger': task.priority === 'High',
+                }"
+              >
+                {{ task.priority }}
+              </span>
+            </td>
+            <td :class="{ 'has-text-grey-light': task.completed }">
+              {{ task.date }}
             </td>
             <td>
               <button
                 class="button is-danger is-small"
-                @click="emitDelete(index)"
+                @click="$emit('delete-task', index)"
               >
                 Delete
               </button>
@@ -48,7 +48,7 @@
       </table>
     </div>
   </div>
-  <div v-else class="notification is-info">
+  <div v-else >
     No tasks available. Add a new task to get started!
   </div>
 </template>
@@ -59,14 +59,6 @@ export default {
     tasks: {
       type: Array,
       required: true,
-    },
-  },
-  methods: {
-    emitDelete(index) {
-      this.$emit('delete-task', index);
-    },
-    emitUpdate() {
-      this.$emit('update-task');
     },
   },
 };
