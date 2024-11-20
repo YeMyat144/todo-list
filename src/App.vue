@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <br />
-    <h1 class="title has-text-centered">To Do List</h1>
+    <h1 class="title has-text-centered">Hello List</h1>
 
     <TaskForm @add-task="addTask" />
     <div class="box">
