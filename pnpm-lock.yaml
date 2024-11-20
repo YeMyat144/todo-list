@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@vuepic/vue-datepicker':
+        specifier: ^10.0.0
+        version: 10.0.0(vue@3.4.38(typescript@5.5.4))
       bulma:
         specifier: ^1.0.2
         version: 1.0.2
       vue:
         specifier: ^3.4.29
         version: 3.4.38(typescript@5.5.4)
+      vuejs-datepicker:
+        specifier: ^1.6.2
+        version: 1.6.2(vue@3.4.38(typescript@5.5.4))
     devDependencies:
       '@nightwatch/vue':
         specifier: ^3.1.1
@@ -781,6 +787,12 @@ packages:
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
 
+  '@vuepic/vue-datepicker@10.0.0':
+    resolution: {integrity: sha512-ujlk3ahftVQpyCJ8hq7TmOOHrf/XFJI1ZcAh/FRB5Ci62Vq5HmHf6xux5KVi5SPUFRTJY78m+uDhYy1M+8RZ9w==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      vue: '>=3.2.0'
+
   '@wdio/logger@9.0.4':
     resolution: {integrity: sha512-b6gcu0PTVb3fgK4kyAH/k5UUWN5FOUdAfhA4PAY/IZvxZTMFYMqnrZb0WRWWWqL6nu9pcrOVtCOdPBvj0cb+Nw==}
     engines: {node: '>=18'}
@@ -1221,6 +1233,9 @@ packages:
   data-urls@5.0.0:
     resolution: {integrity: sha512-ZYP5VBHshaDAiVZxjbRVcFJpc+4xGgT0bK3vzy1HLN8jTO975HEbuYzZJcHoQEY5K1a0z8YayJkyVETa08eNTg==}
     engines: {node: '>=18'}
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
   debug@4.3.1:
     resolution: {integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==}
@@ -3049,6 +3064,11 @@ packages:
       typescript:
         optional: true
 
+  vuejs-datepicker@1.6.2:
+    resolution: {integrity: sha512-PkC4vxzFBo7i6FSCUAJfnaWOx6VkKbOqxijSGHHlWxh8FIUKEZVtFychkonVWtK3iwWfhmYtqHcwsmgxefLpLQ==}
+    peerDependencies:
+      vue: ^2.6.10
+
   w3c-xmlserializer@5.0.0:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
@@ -3889,6 +3909,11 @@ snapshots:
       js-beautify: 1.15.1
       vue-component-type-helpers: 2.0.29
 
+  '@vuepic/vue-datepicker@10.0.0(vue@3.4.38(typescript@5.5.4))':
+    dependencies:
+      date-fns: 4.1.0
+      vue: 3.4.38(typescript@5.5.4)
+
   '@wdio/logger@9.0.4':
     dependencies:
       chalk: 5.3.0
@@ -4407,6 +4432,8 @@ snapshots:
     dependencies:
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
+
+  date-fns@4.1.0: {}
 
   debug@4.3.1:
     dependencies:
@@ -6394,6 +6421,10 @@ snapshots:
       '@vue/shared': 3.4.38
     optionalDependencies:
       typescript: 5.5.4
+
+  vuejs-datepicker@1.6.2(vue@3.4.38(typescript@5.5.4)):
+    dependencies:
+      vue: 3.4.38(typescript@5.5.4)
 
   w3c-xmlserializer@5.0.0:
     dependencies:
