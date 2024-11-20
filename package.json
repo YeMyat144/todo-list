@@ -15,8 +15,8 @@
     "test:unit": "nightwatch src/**/__tests__/*",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
-
   "dependencies": {
+    "bulma": "^1.0.2",
     "vue": "^3.4.29"
   },
   "devDependencies": {

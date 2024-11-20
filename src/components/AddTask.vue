@@ -1,43 +1,28 @@
 <template>
   <div class="add-task">
-    <input
-      v-model="newTask.name"
-      type="text"
+    <input 
+      v-model="newTask" 
+      type="text" 
       placeholder="Add a new task"
-      @keyup.enter="submitTask"
+      @keyup.enter="addTask"
     />
-    <input
-      v-model="newTask.category"
-      type="text"
-      placeholder="Category"
-    />
-    <input
-      v-model="newTask.dueDate"
-      type="date"
-    />
-    <button @click="submitTask">Add Task</button>
+    <button @click="addTask">Add</button>
   </div>
 </template>
 
 <script>
 export default {
+  props: ['onAdd'],
   data() {
     return {
-      newTask: {
-        name: '',
-        category: '',
-        dueDate: '',
-        completed: false,
-      },
+      newTask: '',
     };
   },
   methods: {
-    submitTask() {
-      if (this.newTask.name.trim()) {
-        this.$emit('addTask', { ...this.newTask });
-        this.newTask.name = '';
-        this.newTask.category = '';
-        this.newTask.dueDate = '';
+    addTask() {
+      if (this.newTask.trim()) {
+        this.onAdd(this.newTask.trim());
+        this.newTask = '';
       }
     },
   },
@@ -47,28 +32,7 @@ export default {
 <style scoped>
 .add-task {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
   margin-bottom: 20px;
-}
-
-input {
-  flex: 1;
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #218838;
 }
 </style>
